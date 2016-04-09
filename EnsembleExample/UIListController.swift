@@ -192,13 +192,14 @@ class UIListController: UITableViewController, GTNotificationDelegate {
         print("Refreshing view")
         
         dispatch_async(dispatch_get_main_queue()) {
-        let itemCount = self.listItems.count
-        self.updateItems()
-        if itemCount != self.listItems.count {
-            self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
-        }
+            let itemCount = self.listItems.count
+            self.updateItems()
+            if itemCount != self.listItems.count
+            {
+                self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+            }
         
-        self.displayNotification("Items updated from iCloud")
+            self.displayNotification("Items updated from iCloud")
         }
     }
     
